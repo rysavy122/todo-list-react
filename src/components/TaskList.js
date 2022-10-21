@@ -58,7 +58,7 @@ function Task({ task, onChange, onDelete }) {
         onChange={e => {
           onChange({
             ...task,
-            done: e.target.checked
+            done: e.target.checked,
           });
         }}
       />

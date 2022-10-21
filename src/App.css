@@ -51,7 +51,7 @@ h1{
   border: 2px solid #008CBA; /* Blue */
 
 }
-#add:hover{
+#add:hover, #save:hover{
   background-color: #008CBA; /* Blue */
   color: white;
 }
