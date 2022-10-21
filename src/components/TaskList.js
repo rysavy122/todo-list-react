@@ -6,7 +6,9 @@ export default function TaskList({
   onDeleteTask
 }) {
   return (
+    
     <ul>
+      
       {tasks.map(task => (
         <li key={task.id}>
           <Task
@@ -21,6 +23,8 @@ export default function TaskList({
 }
 
 function Task({ task, onChange, onDelete }) {
+
+
   const [isEditing, setIsEditing] = useState(false);
   let taskContent;
   if (isEditing) {
@@ -49,8 +53,10 @@ function Task({ task, onChange, onDelete }) {
       </>
     );
   }
+
   return (
     <label className='container'>
+      
       <input
         id="checkbox"
         type="checkbox"

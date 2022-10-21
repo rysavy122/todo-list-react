@@ -1,8 +1,43 @@
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import TaskList from './TaskList';
 
 
 export default function AddTask({ onAddTask }) {
+
+  const getLocalItems = () => {
+    let list = localStorage.getItem('lists');
+    console.log(list);
+
+    if(list) {
+      return JSON.parse(localStorage.getItem('lists'));
+    } else {
+      return [];
+    }
+  }
+
+  const [inputData, setInputData] = useState('');
+  const [items, setItems] = useState(getLocalItems());
+
+  const addItem = () => {
+    if(!inputData){
+
+    } else {
+      setItems ([...items, inputData]);
+      setInputData('')
+    }
+  }
+
+  //Remove all ? 
+  const removeAll = () => {
+    setItems([]);
+  }
+
+useEffect(() => {
+
+  localStorage.setItem('lists', JSON.stringify(items))
+
+}, [items]);
 
   const data=useRef();
 
@@ -20,7 +55,7 @@ export default function AddTask({ onAddTask }) {
   return (
     <>
       <input
-      ref={data}
+        ref={data}
         id="input"
         placeholder="Aufgabe hinzufügen..."
         value={text}
