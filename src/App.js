@@ -43,6 +43,7 @@ export default function TaskApp() {
       <p>Wochenprojekt Gruppe 3 : Marwa, Andreas & Denis. <br></br><br></br> WBS Coding School WDG007</p>
       <AddTask
         onAddTask={handleAddTask}
+        required
       />
       <TaskList
         tasks={tasks}

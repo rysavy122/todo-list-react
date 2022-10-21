@@ -54,11 +54,13 @@ useEffect(() => {
   const [text, setText] = useState('');
   return (
     <>
+    <form>
       <input
         ref={data}
         id="input"
         placeholder="Aufgabe hinzufügen..."
         value={text}
+        required
         onChange={e => setText(e.target.value)}
       />
       <button
@@ -68,6 +70,7 @@ useEffect(() => {
         onAddTask(text);
         handleClick();
       }}>Add</button>
+    </form>
     </>
   )
 }
